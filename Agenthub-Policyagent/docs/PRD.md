@@ -1,4 +1,4 @@
-# PRD — AgentHub Policy Agent (Mini Enterprise Agent Platform Demo)
+# PRD- AgentHub Policy Agent (Mini Enterprise Agent Platform Demo)
 
 ## 1. Summary
 AgentHub Policy Agent is an internal Policy Q&A assistant designed for regulated enterprise environments. It answers employee questions using an approved policy knowledge base with role-based access control (RBAC), mandatory citations, guardrails, and audit logging.
