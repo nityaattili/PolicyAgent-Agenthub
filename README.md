@@ -1,4 +1,4 @@
-# 🏦 AgentHub — Enterprise Policy Agent (Governance-First Agentic AI Demo)
+# 🏦 AgentHub-  Enterprise Policy Agent (Governance-First Agentic AI Demo)
 
 AgentHub is a governance-first internal Policy Q&A agent built to demonstrate how enterprise-ready Agentic AI platforms should be designed.
 
