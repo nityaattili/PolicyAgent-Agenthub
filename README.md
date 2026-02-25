@@ -1,18 +1,18 @@
-# 🏦 AgentHub-  Enterprise Policy Agent 
+# AgentHub-  Enterprise Policy Agent 
 
 AgentHub is a governance-first internal Policy Q&A agent built to demonstrate how enterprise-ready Agentic AI platforms should be designed.
 
 It prioritizes:
-- 🔐 Role-Based Access Control (RBAC)
-- 📚 Source-required answers (No hallucinations)
-- 🛡 Guardrails (Prompt injection + PII detection)
-- 🧾 Audit logging
-- 📊 Monitoring & evaluation metrics
-- 🔄 Orchestrated agent workflows (LangGraph)
+- Role-Based Access Control (RBAC)
+- Source-required answers (No hallucinations)
+- Guardrails (Prompt injection + PII detection)
+- Audit logging
+- Monitoring & evaluation metrics
+- Orchestrated agent workflows (LangGraph)
 
 ---
 
-## 🎯 Problem
+## Problem
 
 Enterprises need fast, reliable answers to internal policy questions (PTO, procurement, compliance).
 
@@ -26,7 +26,7 @@ AgentHub solves this with governance-first architecture.
 
 ---
 
-## 🏗 Architecture Overview
+## Architecture Overview
 
 User (Streamlit UI)  
 → FastAPI Backend  
@@ -39,9 +39,9 @@ User (Streamlit UI)
 
 ---
 
-## 🔐 Security & Governance
+## Security & Governance
 
-### 1️⃣ Role-Based Document Access (RBAC)
+### 1.Role-Based Document Access (RBAC)
 Each document defines:
 Classification: INTERNAL | CONFIDENTIAL
 AllowedRoles: employee, manager, hr, legal
@@ -53,21 +53,21 @@ If access is not permitted → `NO_SOURCES` → safe refusal.
 
 ---
 
-### 2️⃣ No-Hallucination Policy
+### 2.No-Hallucination Policy
 - If no sources are retrieved → the system refuses.
 - Every answered response includes citations.
 - Post-check enforces citation presence.
 
 ---
 
-### 3️⃣ Guardrails
+### 3. Guardrails
 - Prompt injection pattern detection
 - PII detection + redaction
 - Guardrail flags logged in audit trail
 
 ---
 
-### 4️⃣ Audit Logging
+### 4. Audit Logging
 Each run stores:
 - run_id
 - user_role
@@ -79,7 +79,7 @@ Each run stores:
 
 ---
 
-### 5️⃣ Monitoring Dashboard
+### 5.Monitoring Dashboard
 Exposes `/metrics` endpoint tracking:
 - Total runs
 - Success rate
@@ -90,7 +90,7 @@ Displayed in Streamlit under **Metrics & Monitoring**.
 
 ---
 
-## 🧠 Tech Stack
+##  Tech Stack
 
 - Python 3.12
 - FastAPI
@@ -102,28 +102,29 @@ Displayed in Streamlit under **Metrics & Monitoring**.
 
 ---
 
-## 🧪 Example Scenarios
+## Example Scenarios
 
-### ✅ Employee asks PTO question
+### a.Employee asks PTO question
 - Retrieves INTERNAL policy
 - Returns cited answer
 - Status: ANSWERED
 
-### 🚫 Employee asks confidential vendor question
+###  b.Employee asks confidential vendor question
 - RBAC blocks retrieval
 - Status: NO_SOURCES
 
-### ✅ Manager asks vendor approval question
+### c.Manager asks vendor approval question
 - Retrieves CONFIDENTIAL document
 - Returns cited answer
 
 ---
 
-## 🚀 How to Run
+## How to Run
 
 ### Backend
 ```bash
 uvicorn app.main:app --reload
 
-Frontend 
+### Frontend
+
 streamlit run ui/streamlit_app.py
